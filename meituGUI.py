@@ -90,13 +90,13 @@ class rootWindow(QMainWindow):
         r=fbd.exec_()
 
     def help(self):
-        webbrowser.open("www.baidu.com")
+        webbrowser.open("https://github.com/crj1998/meitu")
 
     def openmeitu(self):
         webbrowser.open("https://www.meituri.com/")
 
     def opengithub(self):
-        webbrowser.open("")
+        webbrowser.open("https://github.com/crj1998")
 
 
 if __name__ == '__main__':
