@@ -33,6 +33,19 @@
 ![](https://i.imgur.com/cQCoJEw.jpg)
 
 当出现其他错误时，程序可能闪退，重启应用，点击 反馈-反馈 上传错误信息，默认是要上传日志的，也可以选择不上传。   
+---
+<font size=4 color=red>可能出现的问题：</font>  
+出现下面的报错：  
+![](https://i.imgur.com/gBi6b5L.png)   
+可能是由于将exe文件直接放在桌面导致的，新建一个文件夹，将exe文件和icon文件夹放入即可。  
+如果非要放在桌面，可以使用命令行运行，或者用管理员身份运行。  
+
+主界面出现下面的状况：  
+![](https://i.imgur.com/qCMn6ad.png)  
+即页面上本该有图标的地方没有图标了，主要是由于icon文件夹与exe不在同一文件夹下。也可以忽略此问题，不影响功能。  
+
+还有其他问题可以通过应用内反馈功能回馈问题并上传日志。如果应用打不开，请将问题截图或描述发送到邮箱[3257575985@qq.com](https://mail.qq.com/)或者在[github项目](https://github.com/crj1998/meitu/issues)下直接提问。
+
 
 ---
 <font size=4 color=blue>几点说明：</font>  
