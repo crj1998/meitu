@@ -103,6 +103,7 @@ class mainWindow(QWidget):
             self.btn.setText("下载")
             self.btn.setEnabled(True)
             self.edit.setEnabled(True)
+            self.edit.clear()
             self.count = 14
 
     def do(self):
