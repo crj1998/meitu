@@ -6,8 +6,10 @@ import webbrowser
 from feedback import feedbackDialog
 from aboutme import aboutDialog
 from meituMain import mainWindow
+from classDialog import ClassTable
 
 class rootWindow(QMainWindow):
+    windowList = []
     def __init__(self):
         super().__init__()
         self.root = os.getcwd()
@@ -32,6 +34,8 @@ class rootWindow(QMainWindow):
         self.helpAct = QAction(QIcon("icon/help.ico"), "使用指南", self, triggered=self.help, statusTip = "使用指南")
         self.openWebAct = QAction(QIcon("icon/shoe.ico"), "打开网站", self, statusTip="打开 美图 网站", triggered=self.openmeitu)
         self.githubAct = QAction(QIcon("icon/github.ico"), "查看源码or更新", self, statusTip="打开github查看源码or更新动态，欢迎star", triggered=self.opengithub)
+        self.class1Act = QAction(QIcon(), "按公司分", self, statusTip="将图片按照出版/发行商分类", triggered=self.classDialog)
+        self.class2Act = QAction(QIcon(), "按内容分", self, statusTip="将图片按内容分类", triggered=self.classDialog)
         self.user.setChecked(True)
 
     def createMenus(self):
@@ -52,7 +56,12 @@ class rootWindow(QMainWindow):
         aboutMenu.addAction(self.aboutmeAct)
         aboutMenu.addAction(self.aboutQtAct)
 
+        classMenu=self.menuBar().addMenu("分类")
+        classMenu.addAction(self.class1Act)
+        classMenu.addAction(self.class2Act)
+
         self.menuBar().addMenu(settingMenu)
+        self.menuBar().addMenu(classMenu)
         self.menuBar().addMenu(feedbackMenu)
         self.menuBar().addMenu(aboutMenu)
 
@@ -97,6 +106,17 @@ class rootWindow(QMainWindow):
 
     def opengithub(self):
         webbrowser.open("https://github.com/crj1998")
+
+    def classDialog(self):
+        sender = self.sender()
+        if sender.text() == "按公司分":
+            filename = "class01.dat"
+        else:
+            filename = "class02.dat"
+        win = ClassTable(filename)
+        self.windowList.append(win)
+        win.show()
+
 
 
 if __name__ == '__main__':
